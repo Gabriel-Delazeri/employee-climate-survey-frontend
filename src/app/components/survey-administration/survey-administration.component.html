@@ -1,1 +1,7 @@
-<p>survey-administration works!</p>
+<div *ngFor="let survey of surveys">
+    {{ survey.title }}
+    <div *ngFor="let question of survey.questions">
+        {{ question.title}}
+        {{ question.content }}
+    </div>
+</div>
