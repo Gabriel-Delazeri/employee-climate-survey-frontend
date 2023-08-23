@@ -11,6 +11,8 @@ import { AddQuestionModalComponent } from '../add-question-modal/add-question-mo
   styleUrls: ['./survey-page-adminstration.component.css'],
 })
 export class SurveyPageAdminstrationComponent implements OnInit {
+  surveyId: string = '';
+
   survey: Survey = {
     id: '',
     title: '',
@@ -20,14 +22,20 @@ export class SurveyPageAdminstrationComponent implements OnInit {
 
   isModalOpen: boolean = false;
 
-  constructor(private route: ActivatedRoute, private service: SurveyService, private dialog: MatDialog) {}
+  constructor(
+    private route: ActivatedRoute,
+    private service: SurveyService,
+    private dialog: MatDialog
+  ) {}
 
-  ngOnInit() {
-    let surveyId = this.route.snapshot.paramMap.get('surveyId');
-
-    if (surveyId !== null) {
-      this.setSurvey(surveyId);
-    }
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((paramMap) => {
+      const surveyIdParam = paramMap.get('surveyId');
+      this.surveyId = surveyIdParam ?? this.surveyId;
+      if (this.surveyId !== null) {
+        this.setSurvey(this.surveyId);
+      }
+    });
   }
 
   setSurvey(surveyId: string): void {
@@ -36,21 +44,22 @@ export class SurveyPageAdminstrationComponent implements OnInit {
       .subscribe((survey) => (this.survey = survey));
   }
 
-  openQuestionModal() : void {
+  openQuestionModal(): void {
     this.isModalOpen = true;
     const dialogRef = this.dialog.open(AddQuestionModalComponent, {
       width: '400px',
       data: {
-        surveyId: this.survey.id
-      }
-    })
+        surveyId: this.survey.id,
+      },
+    });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
+      this.setSurvey(this.surveyId);
       this.isModalOpen = false;
-    })
+    });
   }
 
-  handleModalClosed() : void {
+  handleModalClosed(): void {
     this.isModalOpen = false;
   }
 }

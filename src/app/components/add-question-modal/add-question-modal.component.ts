@@ -25,12 +25,12 @@ export class AddQuestionModalComponent implements OnInit {
     public dialogRef: MatDialogRef<AddQuestionModalComponent>,
     private categoryService: CategoryService,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private questionService: QuestionService,
+    private questionService: QuestionService
   ) {}
 
   ngOnInit(): void {
-    this.setCategories()
-    this.questionRequest.surveyId = this.data.surveyId
+    this.setCategories();
+    this.questionRequest.surveyId = this.data.surveyId;
   }
 
   setCategories() {
@@ -43,7 +43,12 @@ export class AddQuestionModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  handleQuestionSave() {
-    this.questionService.createQuestion(this.questionRequest).subscribe((question) => console.log(question));
+  async handleQuestionSave() {
+    try {
+      this.questionService.createQuestion(this.questionRequest).subscribe();
+      this.closeModal();
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
 }
