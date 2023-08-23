@@ -1,0 +1,17 @@
+<div class="bg-gray-900 p-4 text-gray-200">
+  {{ survey.title }}
+  <div
+    class="bg-gray-800 text-gray-200 p-4 m-2"
+    *ngFor="let question of survey.questions"
+  >
+    {{ question.title }}
+    <div class="text-gray-400">
+      {{ question.content }}
+    </div>
+  </div>
+  <div class="bg-gray-800 p-4 m-2 flex justify-center items-center">
+    <button (click)="openQuestionModal()" [disabled]="isModalOpen">
+      <lucide-icon name="plus" class="i-plus hover:text-blue-400 transition-colors" size="20"></lucide-icon>
+    </button>
+  </div>
+</div>

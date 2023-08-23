@@ -1,0 +1,69 @@
+<div class="fixed inset-0 flex items-center justify-center backdrop-blur-sm">
+  <div
+    class="bg-gray-800 p-8 shadow-md flex text-gray-200 flex-col space-y-10 w-96"
+  >
+    <div class="flex flex-row justify-between">
+      <div>Add Question</div>
+      <button mat-raised-button (click)="closeModal()">
+        <lucide-icon
+          name="x"
+          class="i-plus hover:text-blue-400 transition-colors"
+          size="20"
+        ></lucide-icon>
+      </button>
+    </div>
+    <form>
+      <div class="mb-6">
+        <label
+          for="base-input"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Title</label
+        >
+        <input
+          [(ngModel)]="questionRequest.title"
+          name="title"
+          type="text"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+      <div class="mb-6">
+        <label
+          for="base-input"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Content</label
+        >
+        <textarea
+          [(ngModel)]="questionRequest.content"
+          name="content"
+          rows="4"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        ></textarea>
+      </div>
+      <div class="mb-6">
+        <label
+          for="countries"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Category</label
+        >
+        <select
+          name="categoryId"
+          [(ngModel)]="questionRequest.categoryId"
+          id="countries"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option value="">Select an option</option>
+          <option *ngFor="let category of categories" [value]="category.id">
+            {{ category.name }}
+          </option>
+        </select>
+      </div>
+      <div class="flex flex-row justify-end">
+        <button (click)="handleQuestionSave()" class="bg-gray-700 p-3 rounded-md hover:border-blue-400 border-2 border-gray-700 transition-colors">
+          Salvar
+        </button>
+      </div>
+      <div class="">
+      </div>
+    </form>
+  </div>
+</div>
