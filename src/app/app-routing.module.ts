@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './infra/auth.guard';
-import { AdminLoginPageComponent } from './components/admin-login-page/admin-login-page.component';
+import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { AdminLoginComponent } from './pages/admin/admin-login/admin-login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'login', component: AdminLoginPageComponent}
+  { path: 'admin/login', component: AdminLoginComponent},
+  { path: 'admin/dashboard', canActivate: [AuthGuard], component: AdminDashboardComponent}
 ];
 
 @NgModule({

@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LucideAngularModule, Eye, Edit, Trash, Plus, X } from 'lucide-angular';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AdminLoginPageComponent } from './components/admin-login-page/admin-login-page.component';
+import { AdminLoginComponent } from './pages/admin/admin-login/admin-login.component';
+import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AdminLoginPageComponent
+    AdminLoginComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
