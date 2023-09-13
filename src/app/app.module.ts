@@ -10,13 +10,17 @@ import { LucideAngularModule, Eye, Edit, Trash, Plus, X } from 'lucide-angular';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AdminLoginComponent } from './pages/admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AdminLoginComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    UserLayoutComponent,
+    AdminLayoutComponent
   ],
   imports: [
     BrowserModule,
