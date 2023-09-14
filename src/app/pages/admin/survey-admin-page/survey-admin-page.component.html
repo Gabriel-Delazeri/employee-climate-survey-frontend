@@ -1,0 +1,61 @@
+<div class="relative overflow-x-auto space-y-4">
+    <table class="w-full text-sm text-left text-gray-500 rounded-xl">
+        <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+            Questions
+        </caption>
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Content
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Category
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Type
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Options
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200 transition-colors" *ngFor="let question of survey.questions">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{ question.content }}
+                </th>
+                <td class="px-6 py-4">
+                    {{ question.category.name }}
+                </td>
+                <td class="px-6 py-4">
+                    {{ question.type }}
+                </td>
+                <td class="px-6 py-4">
+                    {{ question.options.length >= 1 ? question.options.length : 'N/A' }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+            Access
+        </caption>
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Content
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Category
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200 transition-colors" *ngFor="let access of survey.access_list">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{ access.accessStatus }}
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>

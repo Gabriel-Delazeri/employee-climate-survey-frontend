@@ -6,5 +6,5 @@ export interface Survey {
   title: string;
   description: string;
   questions: Question[];
-  accesses: Access[];
+  access_list: Access[];
 }

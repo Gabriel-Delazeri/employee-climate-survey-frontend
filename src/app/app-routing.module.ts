@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-das
 import { AdminLoginComponent } from './pages/admin/admin-login/admin-login.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { SurveysPageComponent } from './pages/admin/surveys-page/surveys-page.component';
+import { SurveyAdminPageComponent } from './pages/admin/survey-admin-page/survey-admin-page.component';
 
 const routes: Routes = [
   { 
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'login', component: AdminLoginComponent},
       { path: 'dashboard', canActivate: [AuthGuard], component: AdminDashboardComponent},
       { path: 'surveys', canActivate: [AuthGuard], component: SurveysPageComponent},
+      { path: 'surveys/:id', canActivate: [AuthGuard], component: SurveyAdminPageComponent},
     ]
   }
 ];

@@ -13,7 +13,7 @@ import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-das
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { SurveysPageComponent } from './pages/admin/surveys-page/surveys-page.component';
-
+import { SurveyAdminPageComponent } from './pages/admin/survey-admin-page/survey-admin-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,8 @@ import { SurveysPageComponent } from './pages/admin/surveys-page/surveys-page.co
     AdminDashboardComponent,
     UserLayoutComponent,
     AdminLayoutComponent,
-    SurveysPageComponent
+    SurveysPageComponent,
+    SurveyAdminPageComponent,
   ],
   imports: [
     BrowserModule,
