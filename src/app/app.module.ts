@@ -8,22 +8,22 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LucideAngularModule, Eye, Edit, Trash, Plus, X } from 'lucide-angular';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AdminLoginComponent } from './pages/admin/admin-login/admin-login.component';
-import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { LoginComponent } from './pages/admin/login/login.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { SurveysPageComponent } from './pages/admin/surveys-page/surveys-page.component';
-import { SurveyAdminPageComponent } from './pages/admin/survey-admin-page/survey-admin-page.component';
+import { SurveysPageComponent } from './pages/admin/surveys/surveys-page.component';
+import { SurveyPageComponent } from './pages/admin/survey/survey-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AdminLoginComponent,
-    AdminDashboardComponent,
+    LoginComponent,
+    DashboardComponent,
     UserLayoutComponent,
     AdminLayoutComponent,
     SurveysPageComponent,
-    SurveyAdminPageComponent,
+    SurveyPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { AuthenticationRequestDto } from 'src/app/types/AuthenticationRequestDto';
+import { AuthenticationRequestDto } from 'src/app/types/dtos/AuthenticationRequestDto';
 
 @Component({
-  selector: 'app-admin-login',
-  templateUrl: './admin-login.component.html',
-  styleUrls: ['./admin-login.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class AdminLoginComponent {
+export class LoginComponent {
   authenticationData : AuthenticationRequestDto = {
     username: '',
     password: ''

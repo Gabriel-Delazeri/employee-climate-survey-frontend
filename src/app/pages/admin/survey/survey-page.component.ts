@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SurveyService } from 'src/app/services/survey.service';
-import { Survey } from 'src/app/types/Survey';
+import { Survey } from 'src/app/types/domain/Survey';
 
 @Component({
-  selector: 'app-survey-admin-page',
-  templateUrl: './survey-admin-page.component.html',
-  styleUrls: ['./survey-admin-page.component.css']
+  selector: 'app-survey',
+  templateUrl: './survey-page.component.html',
+  styleUrls: ['./survey-page.component.css']
 })
-export class SurveyAdminPageComponent implements OnInit {
+export class SurveyPageComponent implements OnInit {
   private id: string = '';
 
   survey: Survey = {
@@ -24,7 +24,7 @@ export class SurveyAdminPageComponent implements OnInit {
   ngOnInit(): void {
     let id: string | null = this.route.snapshot.paramMap.get('id');
 
-    if (id != null) { 
+    if (id != null) {
       this.id = id;
 
       this.surveyService.getSurveyById(id).subscribe((surveyResponse) => this.survey = surveyResponse);
