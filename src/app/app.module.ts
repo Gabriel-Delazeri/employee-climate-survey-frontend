@@ -12,6 +12,7 @@ import { AdminLoginComponent } from './pages/admin/admin-login/admin-login.compo
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { SurveysPageComponent } from './pages/admin/surveys-page/surveys-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AdminLoginComponent,
     AdminDashboardComponent,
     UserLayoutComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    SurveysPageComponent
   ],
   imports: [
     BrowserModule,

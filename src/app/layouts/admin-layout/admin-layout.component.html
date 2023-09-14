@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<div class="flex flex-col bg-zinc-900 w-screen h-full text-gray-200">
+    <nav class="flex flex-row bg-black p-4 justify-between text-lg">
+        <div class="flex flex-row space-x-8 font-medium">
+            <a class="hover:text-gray-300" href="#">Surveys</a>
+        </div>
+        <a href="#" class="hover:text-gray-300">Logout</a>
+    </nav>
+    <body class="p-8">
+        <router-outlet></router-outlet>
+    </body>
+</div>

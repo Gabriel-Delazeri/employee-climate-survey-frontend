@@ -1,3 +1,4 @@
+import { Access } from './Access';
 import { Question } from './Question';
 
 export interface Survey {
@@ -5,4 +6,5 @@ export interface Survey {
   title: string;
   description: string;
   questions: Question[];
+  accesses: Access[];
 }
