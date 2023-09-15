@@ -15,6 +15,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { SurveysPageComponent } from './pages/admin/surveys/surveys-page.component';
 import { SurveyPageComponent } from './pages/admin/survey/survey-page.component';
 import { NavbarAdminComponent } from './components/navbar-admin/navbar-admin.component';
+import { SurveyComponent } from './pages/common/survey/survey.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { NavbarAdminComponent } from './components/navbar-admin/navbar-admin.com
     SurveysPageComponent,
     SurveyPageComponent,
     NavbarAdminComponent,
+    SurveyComponent,
   ],
   imports: [
     BrowserModule,

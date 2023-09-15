@@ -7,11 +7,16 @@ import { LoginComponent } from './pages/admin/login/login.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { SurveysPageComponent } from './pages/admin/surveys/surveys-page.component';
 import { SurveyPageComponent } from './pages/admin/survey/survey-page.component';
+import { SurveyComponent } from './pages/common/survey/survey.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'survey/:surveyId',
+    component: SurveyComponent
   },
   {
     path: 'admin/login',

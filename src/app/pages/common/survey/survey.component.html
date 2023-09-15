@@ -1,0 +1,25 @@
+<div class="flex flex-col p-5 space-y-4"> 
+        <div *ngFor="let question of survey.questions; let question_index = index" class="flex flex-col">
+            <div class="flex bg-gray-300 p-5">
+                {{question.content}} 
+            </div>
+            <div class="flex flex-row">
+            <ng-container *ngIf="question.options.length < 1; else options">
+                <textarea name="fodass" cols="30" rows="5" required class="bg-gray-200 flex flex-row w-screen mt-4 p-4 text-gray-900 border border-gray-300 focus:border-gray-400 outline-none transition-all" [(ngModel)]="answers[question_index].textOption"></textarea>
+            </ng-container>
+            <ng-template #options>
+                <div *ngFor="let option of question.options" class="p-4 space-x-2">
+                    <input type="radio" [value]="option.description" [name]="question.id" required>
+                    <span>
+                        {{option.description}}
+                    </span>
+                </div>
+            </ng-template>
+        </div>
+        </div>
+        <div class="flex flex-row justify-center">
+            <button class="bg-green-300 p-4 hover:bg-green-400 rounded-md transition-colors" (submit)="handleSubmit()">
+                Enviar
+            </button>
+        </div>
+</div>
