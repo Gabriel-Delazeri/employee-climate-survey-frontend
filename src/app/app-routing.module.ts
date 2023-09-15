@@ -14,10 +14,13 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'admin/login',
+    component: LoginComponent
+  },
+  {
     path: 'admin',
     component: AdminLayoutComponent,
     children: [
-      { path: 'login', component: LoginComponent},
       { path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent},
       { path: 'surveys', canActivate: [AuthGuard], component: SurveysPageComponent},
       { path: 'surveys/:id', canActivate: [AuthGuard], component: SurveyPageComponent},

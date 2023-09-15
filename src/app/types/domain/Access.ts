@@ -4,5 +4,7 @@ import { Survey } from "./Survey";
 export interface Access {
     id: string;
     survey: Survey;
-    accessStatus: AccessStatus;
+    status: AccessStatus;
+    expires_at: Date;
+    created_at: Date;
 }
